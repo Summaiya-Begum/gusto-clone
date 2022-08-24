@@ -1,8 +1,8 @@
 .backgroundPicDiv{
-    border: 2px solid blue;
     width: 100%;
-    height: 1500px;
+    height: auto;
     background-repeat: no-repeat;
+    padding: 1rem 0rem 1rem 0rem;
 }
 .para1Div{
     padding: 2rem ;
@@ -25,45 +25,72 @@
     margin: auto;   
     margin-top: 5px; 
 }
-.para3Div{
-    outline:rgb(120, 123, 121) solid 2px;
+ .para3Div{
+    border:2px solid rgb(120, 123, 121)   ;
     margin: auto;  
     width: 100%;
-    padding: 25px;
+    padding: 20px;
     text-align: center;
     display: flex;
+    
+}
+.para3Div :hover{
+    color: teal;
 }
 .para3Div > img{
     margin-left: 10px;
 }
 .para4Div{
 
-    outline:rgb(120, 123, 121) solid 2px;
+    border:rgb(120, 123, 121) solid 2px;
     margin: auto;  
     width: 100%;
-    padding: 25px;
+    padding: 20px;
     text-align: center;
     display: flex;
 }
 .para4Div > img{
-margin-left: 10px;
+    margin-left: 10px;
 }
+.para4Div :hover{
+    color: teal;
+}
+
 .para5Div{
-    outline:rgb(120, 123, 121) solid 2px;
+    border:rgb(120, 123, 121) solid 2px;
     margin: auto;  
     width: 100%;
-    padding: 25px;
+    padding: 20px;
     text-align: center;
-
     display: flex;
 }
 .para5Div > img{
     margin-left: 10px;
-    }
+}
+.para5Div :hover{
+    color: teal;
+}
 .para6Div{
-    /* outline:rgb(120, 123, 121) solid 2px; */
-    
+   
+    /* border: 2px solid yellow; */
 }
 .para7Div{
-    border: 2px solid rgb(255, 196, 0);
+    /* border: 2px solid rgb(255, 196, 0); */
+    margin-top: 30px;
+    padding: 2rem ;
+    text-align: end;
+
+}
+.backImage{
+     background-repeat:  no-repeat;
+     background-size: 300px 200px;
+    background-image: url('https://prod.gusto-assets.com/assets/homepage/doodle-background@2x-2a4559c1bf2bc93978a3443e6f2e6543da688efd85bcd47b97411deb3061e18c.png.webp');
+}
+.gridDiv{
+   margin-top: 20px;
+    /* border:1px solid rgb(0, 255, 13); */
+    padding: 1rem 1rem 1rem 1rem;
+}
+.VSatckBox{
+    background-color: rgb(243, 239, 235);
 }
