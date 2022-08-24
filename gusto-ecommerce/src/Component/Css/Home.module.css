@@ -1,0 +1,69 @@
+.backgroundPicDiv{
+    border: 2px solid blue;
+    width: 100%;
+    height: 1500px;
+    background-repeat: no-repeat;
+}
+.para1Div{
+    padding: 2rem ;
+    /* border: 2px solid rgb(255, 0, 162); */
+    width: 45%;
+    margin-left: 35px;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 10px;
+    
+   
+
+}
+.para2Div{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap: 20px;
+    /* border: 2px solid rgb(0, 34, 255); */
+    width: 100%;
+    margin: auto;   
+    margin-top: 5px; 
+}
+.para3Div{
+    outline:rgb(120, 123, 121) solid 2px;
+    margin: auto;  
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+    display: flex;
+}
+.para3Div > img{
+    margin-left: 10px;
+}
+.para4Div{
+
+    outline:rgb(120, 123, 121) solid 2px;
+    margin: auto;  
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+    display: flex;
+}
+.para4Div > img{
+margin-left: 10px;
+}
+.para5Div{
+    outline:rgb(120, 123, 121) solid 2px;
+    margin: auto;  
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+
+    display: flex;
+}
+.para5Div > img{
+    margin-left: 10px;
+    }
+.para6Div{
+    /* outline:rgb(120, 123, 121) solid 2px; */
+    
+}
+.para7Div{
+    border: 2px solid rgb(255, 196, 0);
+}

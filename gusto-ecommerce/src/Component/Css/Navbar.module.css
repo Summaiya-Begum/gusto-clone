@@ -1,0 +1,31 @@
+.navbarContainer{
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid rgb(43, 0, 255);
+    background-color: rgb(246, 246, 246);
+    color: white;
+    top: 0px;
+    width: 100%;
+    padding: 0.5rem;
+    position: sticky;
+    font-size: 12px;
+}
+.navDiv1{
+    display: flex;
+    justify-content: space-around;  
+    border: 1px solid red;
+    margin: auto;
+}
+.navDiv2{
+    margin: auto;
+    display: flex;
+    justify-content: space-around;  
+    gap:10px;
+    border: 1px solid rgb(9, 255, 0);
+}
+.navDiv3{
+    display: flex;
+    margin: auto;
+    justify-content: space-around;  
+    border: 1px solid rgb(255, 0, 166);
+}
