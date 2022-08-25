@@ -27,8 +27,8 @@ export default function Home() {
           <Text textAlign="start" fontWeight={500} fontSize={50}>Set your business up with modern payroll, benefits, and more.</Text>
           <Text textAlign="start" fontWeight={600} fontSize={18}>Tell us a little about yourself.</Text>
           <div className={Style.para2Div} >
-            <div className={Style.para3Div}
-              onClick={() => setState(0)} style={state === 0 ? { backgroundColor: "#f3fafb", border: "2px solid #0b9daa" } : null}>
+            <div div className={Style.para3Div}
+             onClick={() => setState(0)} style={state === 0 ? { backgroundColor: "#f3fafb", border: "2px solid #0b9daa" } : null}>
               <img src="https://prod.gusto-assets.com/assets/packs/media/hp_segment_radio/hiring-and-onboarding-5e357ad9.svg" alt="icon" />
               <Text marginLeft={10} py={2} fontWeight={490} fontSize={15}>I'm an employer interested in Gusto</Text>
             </div>

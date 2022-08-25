@@ -1,0 +1,32 @@
+.SignupBigContainer{
+    height: 900px;
+    /* border: 2px solid teal; */
+}
+
+
+.SignUpContainer{
+    /* border: 1px solid red; */
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.SignUpContainerImage{
+    /* border: 1px solid rgb(0, 60, 255);    */
+    width: auto;
+    /* margin: auto; */
+    height: auto;
+    margin-left: 30px;
+}
+
+.SignUpContainerImage > img{
+    width: auto;
+    height: 33px;
+}
+.SignUpContainerTitle{
+    /* border: 1px solid rgb(0, 60, 255);    */
+    width: auto;
+    margin-right: 30px;
+    height: auto;
+}
