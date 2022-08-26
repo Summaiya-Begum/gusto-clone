@@ -1,5 +1,6 @@
-import { Box, Heading, Text, Stack, Button } from '@chakra-ui/react'
+import { Box, Heading, Text, Stack, Button, Flex, Input, HStack, Radio, VStack, Container } from '@chakra-ui/react'
 import Style from './Css/Signup.module.css'
+import {FcGoogle} from "react-icons/fc"
 
 const CreateAccount = () => {
     return (
@@ -35,9 +36,37 @@ const CreateAccount = () => {
                     <b>Nice!</b>  We could be a great fit for your business.
 
                 </Text>
-                <Button>Sign up with Google</Button>
+                <Button w="90%" mb={5} p="5%">
+                    <FcGoogle fontSize={20} pr={10}/><Text ml={2}>Sign up with Google</Text></Button>
                 {/* <FontAwesomeIcon icon="fa-brands fa-google" /> */}
+                <Stack spacing={3}>
 
+                    <Input placeholder='Full name' size='lg' />
+                    <Input placeholder='Work email address' size='lg' />
+                    <Input placeholder='Company name' size='lg' />
+                    <HStack>
+                        <Input placeholder='No. of employess' size='lg' />
+                        <Input placeholder='Company phone' size='lg' />
+                    </HStack>
+                    <Input placeholder='Set password' size='lg' />
+                    <Box h="10px" bg="grey" borderRadius='5px'>
+
+                    </Box>
+                    <VStack align="flex-start">
+
+                        <Radio size='md' name='1' colorScheme='green'>
+                        Use 8 or more characters. 
+                        </Radio>
+                        <Radio size='md' name='1' colorScheme='green'>
+                        Use a minimum of one letter.
+                        </Radio>
+                        <Radio size='md' name='1' colorScheme='green'>
+                        Use a minimum of one number.
+                        </Radio>
+
+                    </VStack>
+                    <Input placeholder='Confirm password' size='lg' />
+                </Stack>
 
                 <Box
                     bg='teal'
@@ -51,11 +80,43 @@ const CreateAccount = () => {
                 >
                     waesrdtfyui
                 </Box>
+                <VStack mt={4}>
+                    <Text>
+                        Already use Gusto? Sign in here
+                    </Text>
+                   <Container noOfLines={2}>
+                   By creating an account, you agree to the terms & 
+                   conditions, the payroll terms, and our privacy policy.
+                   </Container>
+                </VStack>
 
 
 
 
             </Box>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <Stack p={2}>
                 <Box p={0}>
