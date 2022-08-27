@@ -1,6 +1,6 @@
-import { Box, Heading, Text, Button, Stack } from '@chakra-ui/react'
+import { Box, Heading, Text, Stack } from '@chakra-ui/react'
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Style from './Css/Signup.module.css'
 import Form from './Form'
 export default function SignUp() {
@@ -170,7 +170,7 @@ export default function SignUp() {
                         fontSize={18}
                         fontWeight={450}
                     >
-                        Does your company use Gusto today?<a href='./'> Sign in here.</a></Text>
+                        Does your company use Gusto today?<a href='./signin'> Sign in here.</a></Text>
                 </Box>
             </Stack>
 
