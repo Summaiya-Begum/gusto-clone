@@ -4,13 +4,13 @@ import Account from '../Component/Account'
 import Build from '../Component/Build'
 import CreateAccount from '../Component/CreateAccount'
 import Home from '../Component/Home'
-import Navbar from '../Component/Navbar/Navbar'
+
 import NotFound from '../Component/NotFound'
 import PayRoll from '../Component/PayRoll'
 import Pricing from '../Component/Pricing'
 import Resource from '../Component/Resource'
 import Search from '../Component/Search'
-import SignIn from '../Component/SignUp'
+import SignIn from '../Component/SignIn'
 import SignUp from '../Component/SignUp'
 import WhyGusto from '../Component/WhyGusto'
 
@@ -18,7 +18,7 @@ import WhyGusto from '../Component/WhyGusto'
 export default function AllRoutes() {
     return (
         <div>
-            {/* <Navbar /> */}
+
             <Routes>
                 <Route />
                 <Route path='/' element={<Home />} />

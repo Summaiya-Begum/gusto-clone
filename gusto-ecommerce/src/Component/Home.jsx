@@ -2,6 +2,8 @@ import React from 'react'
 import image from "../image/home_bg.webp"
 import Style from "./Css/Home.module.css"
 import { Button, Stack, Text, Box, Divider, SimpleGrid, Img, VStack, StackDivider } from '@chakra-ui/react'
+import Navbar from './Navbar';
+import Footer from './Footer';
 export default function Home() {
 
   const [state, setState] = React.useState(-1);
@@ -11,9 +13,7 @@ export default function Home() {
 
   return (
     <div>
-
-
-
+      <Navbar/>
       {/* ................................FORM DIV............................... */}
       <div style={{
         backgroundImage: `url(${image})`
@@ -292,6 +292,7 @@ export default function Home() {
 
       <div>
       </div>
+      <Footer/>
     </div>
   )
 }

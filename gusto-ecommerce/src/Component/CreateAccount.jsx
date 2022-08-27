@@ -1,6 +1,6 @@
 import { Box, Heading, Text, Stack, Button, Flex, Input, HStack, Radio, VStack, Container } from '@chakra-ui/react'
 import Style from './Css/Signup.module.css'
-import {FcGoogle} from "react-icons/fc"
+import { FcGoogle } from "react-icons/fc"
 
 const CreateAccount = () => {
     return (
@@ -37,7 +37,7 @@ const CreateAccount = () => {
 
                 </Text>
                 <Button w="90%" mb={5} p="5%">
-                    <FcGoogle fontSize={20} pr={10}/><Text ml={2}>Sign up with Google</Text></Button>
+                    <FcGoogle fontSize={20} pr={10} /><Text ml={2}>Sign up with Google</Text></Button>
                 {/* <FontAwesomeIcon icon="fa-brands fa-google" /> */}
                 <Stack spacing={3}>
 
@@ -55,13 +55,13 @@ const CreateAccount = () => {
                     <VStack align="flex-start">
 
                         <Radio size='md' name='1' colorScheme='green'>
-                        Use 8 or more characters. 
+                            Use 8 or more characters.
                         </Radio>
                         <Radio size='md' name='1' colorScheme='green'>
-                        Use a minimum of one letter.
+                            Use a minimum of one letter.
                         </Radio>
                         <Radio size='md' name='1' colorScheme='green'>
-                        Use a minimum of one number.
+                            Use a minimum of one number.
                         </Radio>
 
                     </VStack>
@@ -69,7 +69,7 @@ const CreateAccount = () => {
                 </Stack>
 
                 <Box
-                    bg='teal'
+                    bg={'#f45d48'}
                     variant='solid'
                     w={'95%'}
                     m={'auto'}
@@ -78,16 +78,16 @@ const CreateAccount = () => {
                     color={'white'}
                     mt={10}
                 >
-                    waesrdtfyui
+                    Get started
                 </Box>
                 <VStack mt={4}>
                     <Text>
-                        Already use Gusto? Sign in here
+                        Already use Gusto? <a href='/signin'>Sign in here</a>
                     </Text>
-                   <Container noOfLines={2}>
-                   By creating an account, you agree to the terms & 
-                   conditions, the payroll terms, and our privacy policy.
-                   </Container>
+                    <Container noOfLines={2}>
+                        By creating an account, you agree to the <a href='/*'>terms &
+                            conditions,</a> the <a href='/'>payroll terms,</a>  and our<a>privacy policy.</a>
+                    </Container>
                 </VStack>
 
 
