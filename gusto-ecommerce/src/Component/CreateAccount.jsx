@@ -1,8 +1,34 @@
-import { Box, Heading, Text, Stack, Button, Flex, Input, HStack, Radio, VStack, Container } from '@chakra-ui/react'
+import { Box, Heading, Text, Stack, Button, Input, HStack, Radio, VStack, Container } from '@chakra-ui/react'
 import Style from './Css/Signup.module.css'
 import { FcGoogle } from "react-icons/fc"
+import { useState } from 'react';
+import Axios from "axios";
+import { useNavigate } from 'react-router-dom';
+
 
 const CreateAccount = () => {
+
+    const [formData, setFormData] = useState({})
+    const navigate = useNavigate()
+    // url =  `https://summaiya-api.herokuapp.com/user`
+    const handleInputChange = (e) => {
+        const { value, name } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value
+        })
+
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        Axios.post("https://summaiya-api.herokuapp.com/user", formData);
+        e.target.reset()
+        navigate('/signin')
+    }
+
+
+
     return (
         <div className={Style.SignupBigContainer}>
 
@@ -39,47 +65,49 @@ const CreateAccount = () => {
                 <Button w="90%" mb={5} p="5%">
                     <FcGoogle fontSize={20} pr={10} /><Text ml={2}>Sign up with Google</Text></Button>
                 {/* <FontAwesomeIcon icon="fa-brands fa-google" /> */}
-                <Stack spacing={3}>
+                <form onSubmit={handleSubmit}>
+                    <Stack spacing={3}>
 
-                    <Input placeholder='Full name' size='lg' />
-                    <Input placeholder='Work email address' size='lg' />
-                    <Input placeholder='Company name' size='lg' />
-                    <HStack>
-                        <Input placeholder='No. of employess' size='lg' />
-                        <Input placeholder='Company phone' size='lg' />
-                    </HStack>
-                    <Input placeholder='Set password' size='lg' />
-                    <Box h="10px" bg="grey" borderRadius='5px'>
+                        <Input type="text" name='firstName' onChange={handleInputChange} placeholder='Full name' size='lg' />
+                        <Input type="email" name='email' onChange={handleInputChange} placeholder='Work email address' size='lg' />
+                        <Input type="text" name='company' onChange={handleInputChange} placeholder='Company name' size='lg' />
+                        <HStack>
+                            <Input type="number" name='employee' onChange={handleInputChange} placeholder='No. of employess' size='lg' />
+                            <Input type="number" name='phoneNumber' onChange={handleInputChange} placeholder='Company phone' size='lg' />
+                        </HStack>
+                        <Input type="password" name='password' onChange={handleInputChange} placeholder='Set password' size='lg' />
+                        <Box h="10px" bg="grey" borderRadius='5px'>
 
-                    </Box>
-                    <VStack align="flex-start">
+                        </Box>
+                        <VStack align="flex-start">
 
-                        <Radio size='md' name='1' colorScheme='green'>
-                            Use 8 or more characters.
-                        </Radio>
-                        <Radio size='md' name='1' colorScheme='green'>
-                            Use a minimum of one letter.
-                        </Radio>
-                        <Radio size='md' name='1' colorScheme='green'>
-                            Use a minimum of one number.
-                        </Radio>
+                            <Radio size='md' name='1' colorScheme='green'>
+                                Use 8 or more characters.
+                            </Radio>
+                            <Radio size='md' name='1' colorScheme='green'>
+                                Use a minimum of one letter.
+                            </Radio>
+                            <Radio size='md' name='1' colorScheme='green'>
+                                Use a minimum of one number.
+                            </Radio>
 
-                    </VStack>
-                    <Input placeholder='Confirm password' size='lg' />
-                </Stack>
+                        </VStack>
+                        <Input type="password" name='confirmPassword' onChange={handleInputChange} placeholder='Confirm password' size='lg' />
+                    </Stack>
 
-                <Box
-                    bg={'#f45d48'}
-                    variant='solid'
-                    w={'95%'}
-                    m={'auto'}
-                    p={'1rem 1rem 1rem 1rem'}
-                    borderRadius={5}
-                    color={'white'}
-                    mt={10}
-                >
-                    Get started
-                </Box>
+                    <Input
+                        bg={'#f45d48'}
+                        variant='solid'
+                        w={'95%'}
+                        m={'auto'}
+                        p={'1rem 1rem 2rem 1rem'}
+                        borderRadius={5}
+                        color={'white'}
+                        mt={10}
+                        type='submit'
+                        value='Get started'
+                    />
+                </form>
                 <VStack mt={4}>
                     <Text>
                         Already use Gusto? <a href='/signin'>Sign in here</a>

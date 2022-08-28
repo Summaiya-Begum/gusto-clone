@@ -1,8 +1,10 @@
 import { Box, HStack } from "@chakra-ui/react";
 import SlideDown from "./SlideDown";
 import { Link } from "react-router-dom";
-import { FcSearch } from "react-icons/fc";
+import { Search2Icon } from "@chakra-ui/icons";
+
 export default function Navbar() {
+  
   const navbarData = [
     {
       heading: "Payroll and more",
@@ -132,7 +134,8 @@ export default function Navbar() {
             xl: "space-evenly",
             "2xl": "center",
           },
-          gap: "1rem",
+          gap: "1rem"
+
         }}
       >
         <Link to="/">
@@ -214,7 +217,10 @@ export default function Navbar() {
           }}
         />
         <Link to="/search">
-          <Box display={'flex'}> <FcSearch fontSize={20} pr={10} />Search</Box>
+          <Box>
+            <Search2Icon color="brand.200" />
+            {"  "}Search
+          </Box>
         </Link>
         <Link to="/signin">
           <Box bg="brand.100" padding="10px 20px" borderRadius="7px">

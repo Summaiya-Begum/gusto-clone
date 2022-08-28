@@ -5,6 +5,9 @@ import Style from './Css/Signup.module.css'
 import Form from './Form'
 export default function SignUp() {
     const [index, setIndex] = useState(0);
+
+   
+
     const navigate = useNavigate();
     const formData = [
         {

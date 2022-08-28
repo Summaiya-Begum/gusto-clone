@@ -8,6 +8,7 @@ import Home from '../Component/Home'
 import NotFound from '../Component/NotFound'
 import PayRoll from '../Component/PayRoll'
 import Pricing from '../Component/Pricing'
+import Product from '../Component/Product'
 import Resource from '../Component/Resource'
 import Search from '../Component/Search'
 import SignIn from '../Component/SignIn'
@@ -29,7 +30,7 @@ export default function AllRoutes() {
                 <Route path='/search' element={<Search />} />
                 <Route path='/signup' element={<SignUp />} />
                 <Route path='/create-account' element={<CreateAccount />} />
-
+                <Route path='/product' element={<Product />} />
                 <Route path='/signin' element={<SignIn />} />
                 <Route path='/whygusto' element={<WhyGusto />} />
                 <Route path='/build' element={<Build />} />

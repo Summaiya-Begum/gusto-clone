@@ -1,4 +1,3 @@
-
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import {
   Menu,
@@ -8,37 +7,23 @@ import {
   Button,
   Box,
 } from "@chakra-ui/react";
-import { IoIosArrowDown } from "react-icons/io";
 
 export default function SlideDown({ data, display }) {
   return (
-
-
-   
-
-
-
-
-
-
-
-
-
-
-    <Menu >
+    <Menu>
       <MenuButton
-        px={2}
-        py={2}
-        transition='all 0.2s'
-        borderRadius='md'
-        borderWidth='1px'
-        _hover={{ bg: 'gray.400' }}
-        _expanded={{ bg: 'blue.400' }}
-        _focus={{ boxShadow: 'outline' }}
+        _hover={{ color: "brand.200" }}
+        className="my-box"
+        transition="all 0.2s"
       >
         {data.heading}
-
-        < IoIosArrowDown />
+        <ChevronDownIcon
+          sx={{
+            ".my-box:hover &": {
+              transform: "Rotate(180deg)",
+            },
+          }}
+        />
       </MenuButton>
       <MenuList
         sx={{ display: "grid", gridTemplateColumns: "repeat(2,280px)" }}
@@ -53,14 +38,6 @@ export default function SlideDown({ data, display }) {
           </MenuItem>
         ))}
       </MenuList>
-    </Menu >
-
-
-
-
-
-
-
- 
+    </Menu>
   );
 }

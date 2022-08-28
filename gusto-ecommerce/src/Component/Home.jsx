@@ -1,7 +1,7 @@
 import React from 'react'
 import image from "../image/home_bg.webp"
 import Style from "./Css/Home.module.css"
-import { Button, Stack, Text, Box, Divider, SimpleGrid, Img, VStack, StackDivider } from '@chakra-ui/react'
+import { Button, Stack, Text, Box, Divider, SimpleGrid, Img, Image, VStack, StackDivider, Container } from '@chakra-ui/react'
 import Navbar from './Navbar';
 import Footer from './Footer';
 export default function Home() {
@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar />
       {/* ................................FORM DIV............................... */}
       <div style={{
         backgroundImage: `url(${image})`
@@ -28,7 +28,7 @@ export default function Home() {
           <Text textAlign="start" fontWeight={600} fontSize={18}>Tell us a little about yourself.</Text>
           <div className={Style.para2Div} >
             <div div className={Style.para3Div}
-             onClick={() => setState(0)} style={state === 0 ? { backgroundColor: "#f3fafb", border: "2px solid #0b9daa" } : null}>
+              onClick={() => setState(0)} style={state === 0 ? { backgroundColor: "#f3fafb", border: "2px solid #0b9daa" } : null}>
               <img src="https://prod.gusto-assets.com/assets/packs/media/hp_segment_radio/hiring-and-onboarding-5e357ad9.svg" alt="icon" />
               <Text marginLeft={10} py={2} fontWeight={490} fontSize={15}>I'm an employer interested in Gusto</Text>
             </div>
@@ -56,7 +56,7 @@ export default function Home() {
                     py={5}
 
                   >
-                    <Button colorScheme='red' w={240}  >Create an account</Button>
+                    <Button colorScheme='red' w={240}  > <a href='./signup'>Create an account</a></Button>
                     <Button colorScheme='gray' w={240}>Learn more</Button>
                   </Box>
                 </Stack> : null
@@ -72,7 +72,7 @@ export default function Home() {
                     width='100%'
                     py={5}
                   >
-                    <Button colorScheme='red' w={240} >Create an account</Button>
+                    <Button colorScheme='red' w={240} ><a href='./signup'>Create an account</a></Button>
                     <Button colorScheme='gray' w={240}>Learn more</Button>
                   </Box>
                 </Stack> : null
@@ -101,7 +101,7 @@ export default function Home() {
                     py={5}
 
                   >
-                    <Button colorScheme='red' w={480} >Sign In</Button>
+                    <Button colorScheme='red' w={480} ><a href='./signin'>Sign In</a></Button>
 
                   </Box>
                 </Stack> : null
@@ -255,44 +255,69 @@ export default function Home() {
 
 
 
-        <SimpleGrid className={Style.PosterGrid}>
-          <Stack>
-            Full-service payroll
-          </Stack>
-          <Stack>
-            Employee benefits
-          </Stack>
-          <Stack>
-            Time and attendance
-          </Stack>
-          <Stack>
-            Hiring and onboarding
-          </Stack>
-          <Stack>
-            Talent management
-          </Stack>
-          <Stack>
-            Insights and reporting
-          </Stack>
+        <SimpleGrid
+          // w="60%"
+          p="0 20%"
+          gap={25}
+          fontSize={14}
+          // border="1px red solid"
+          // className={Style.PosterGrid}
+          columns={[2, 3, 4, 6, 6]}>
+          <VStack>
+            <Image boxSize="60px" src="https://prod.gusto-assets.com/assets/components/people_platform/svg/HROS_Payroll@2x-80bbe6366bd32b637b306c324ceac63d666649e5c3fb5f7fa96c6c1581fdc7c1.svg" />
+            <Text>Full-service payroll</Text>
+          </VStack>
+          <VStack>
+
+            <Image boxSize="60px" src="https://prod.gusto-assets.com/assets/components/people_platform/svg/HROS_Benefits@2x-516b42413e9fbb129e21e9ac272e82d4f5994aaccc015ab85b81faa52722a5be.svg" />
+            <Text>Employee benefits</Text>
+          </VStack>
+          <VStack>
+            <Image boxSize="60px" src="https://prod.gusto-assets.com/assets/components/people_platform/svg/HROS_Time%20and%20Attendance-e863d55e2ea828436aade1cc5ab2a79d9e1f0c5868b7eb56716cb01a51d7213c.svg" />
+            <Text>Time and attendance</Text>
+          </VStack>
+          <VStack>
+            <Image boxSize="60px" src="https://prod.gusto-assets.com/assets/components/people_platform/svg/HROS_HiringAndOnboarding@2x-c5d38fff8b6148d52fce57aac81cd88a4115c3e725adbfc502b64776520b95b8.svg" />
+            <Text> Hiring and onboarding</Text>
+          </VStack>
+          <VStack>
+            <Image boxSize="60px" src="https://prod.gusto-assets.com/assets/components/people_platform/svg/HROS_Talent%20Management-917165f1ffb3dfc6bb5a66d9182143738f01aefa6b0505c2bca6536b575fba55.svg" />
+            <Text> Talent management</Text>
+          </VStack>
+          <VStack>
+            <Image boxSize="60px" src="https://prod.gusto-assets.com/assets/components/people_platform/svg/HROS_InsightsAndReporting@2x-aefd17463c1c53c20e07a1acfc2f1d9701697f897869859747bff1b3c31580ab.svg" />
+            <Text> Insights and reporting</Text>
+          </VStack>
+          {/* #e9dcdb */}
 
         </SimpleGrid>
+        <Box position="relative"
+          h="600px"
+          // border="1px red solid"
+          >
+
+          <Image
+            position="absolute"
+            bottom={-10}
+            left="25%"
+            w="50%"
+            src="https://prod.gusto-assets.com/assets/components/people_platform/svg/HROS@2x-2743f54414e7738e77bb05a0d2e015bf32531a3f088d3a66d05d12b3cbdc15ae.svg" />
+        </Box>
+        <Box
+          h="300px"
+          bg="#0a8080">
+          <Container pt="10%" color="white"
+            fontSize={24}>
+            We see Gusto as our complete HR business partner—especially
+            now that we’re more remote and businesses are hiring people from everywhere.
+          </Container>
+
+        </Box>
 
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
       <div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   )
 }

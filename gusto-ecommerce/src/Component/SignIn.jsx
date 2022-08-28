@@ -14,11 +14,38 @@ import {
     Text,
     Divider,
     Image,
-    Img
+
+
 } from '@chakra-ui/react';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 
 export default function Login() {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [logData, setLogData] = useState([])
+
+    useEffect(() => {
+        axios.get(`https://summaiya-api.herokuapp.com/user`)
+            .then((res) => setLogData(res.data))
+    }, [])
+    // console.log(logData)
+
+
+
+    const handleSubmit = (email, password) => {
+        let flag = false;
+        for (let i = 0; i < logData.length; i++) {
+            if (logData[i].email === email && logData[i].password === password) {
+                flag = true;
+                alert("LogIn Successfull");
+            }
+        }
+        if (flag === false) {
+            alert("Wrong Credential");
+        }
+    }
 
 
     return (
@@ -26,63 +53,86 @@ export default function Login() {
 
 
             <Box display={'flex'} justifyContent={'space-around'}
-                //  border={'1px solid red'}
-                w={'100%'} mt={45} p={'1rem 0rem 1rem 0rem'}>
+                // border={'1px solid red'}
+                w={'99%'}
+                h={700}
+                m={'auto'}
+
+                mt={45} p={'1rem 0rem 1rem 0rem'}>
 
                 <Box ml={10} w={700} boxSize='1000px'
-                    // border={'1px solid red'} 
+                    h={400}
+                    // border={'1px solid red'}
                     mt={150}>
                     <Image h={390} src='https://d3bnlkto289wdc.cloudfront.net/assets/packs/media/illustrations/illo-people-with-bouquet-a88253a7.svg' alt='Dan Abramov' />
                 </Box>
 
-                <Box p={'2rem 1rem 2rem 1rem'}
-
-                    //  border={'1px solid green'}
-                    w={'90%'} h={600} boxShadow={'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px'}>
-                    <Box border={'1px solid red'} h={65} >
+                <Box p={'2rem 1rem 10rem 1rem'}
+                    m={'auto'}
+                    ml={1}
+                    borderRadius={5}
+                    // border={'1px solid green'}
+                    w={'90%'} h={650} boxShadow={'rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px'}>
+                    <Box
+                        // border={'1px solid red'} 
+                        h={65} >
                         <Image margin={'auto'} h={65} src='https://prod.gusto-assets.com/assets/svg/header/gusto-logo-bfed4fde4bd2b5dd364ab0e58f77fc90aeefa2f1ecdb7fff524279642e23f9c2.svg' />
                     </Box>
-                    <Box border={'1px solid red'} w={'80%'} m={'auto'} mt={10} >
+                    <Box
+                        // border={'1px solid red'}
+                        w={'80%'} m={'auto'} mt={10} >
                         <FormControl id="email">
                             <FormLabel fontSize={"1.2rem"} fontWeight={600}>Email address</FormLabel>
-                            <Input type="email" />
+
+                            <Input name='email' onChange={(e) => setEmail(e.target.value)} variant='flushed' placeholder='Email Address' />
                         </FormControl>
                         <FormControl id="password">
                             <FormLabel fontSize={"1.2rem"} fontWeight={600}>Password</FormLabel>
-                            <Input type="password" />
+
+                            <Input name='password' onChange={(e) => setPassword(e.target.value)} variant='flushed' placeholder='Password' />
                         </FormControl>
                     </Box>
-                    <Box border={'1px solid red'} w={'80%'} m={'auto'} mt={1} color={'teal'} fontWeight={'bold'} >
+                    <Box
+                        // border={'1px solid red'}
+                        w={'80%'} m={'auto'} mt={1} color={'teal'} fontWeight={'bold'} >
                         <Text display={'flex'}><Link>Having trouble signing in?</Link></Text>
                     </Box>
 
-                    <Box border={'1px solid red'} w={'80%'} m={'auto'} mt={10} >
+                    <Box
+                        //  border={'1px solid red'} 
+                        w={'80%'} m={'auto'} mt={5} >
                         <Checkbox display={'flex'} fontSize={20}><Text fontWeight={490}>Remember this device @</Text></Checkbox>
                     </Box>
 
-                    <Box >
-                        <Button> Sign In</Button>
+                    <Box
+                        // border={'1px solid red'} 
+                        w={'80%'} m={'auto'} mt={5} >
+                        <Button onClick={() => handleSubmit(email, password)} w={'100%'}> Sign In</Button>
                     </Box>
 
-                    <Box>
+                    <Box display={'flex'} justifyContent={'space-around'} mt={5} alignItems={'center'} gap={5}>
                         <Divider orientation='horizontal' /><Text>Or</Text><Divider orientation='horizontal' />
                     </Box>
 
 
-                    <Box>
-                        <Button w="90%" mb={5} p="5%">
+                    <Box
+                        // border={'1px solid red'} 
+                        w={'80%'} m={'auto'} mt={2}>
+                        <Button w="60%" mb={5} p="5%" m={'auto'}>
                             <FcGoogle fontSize={20} pr={10} />
                             <Text ml={2}>Sign up with Google</Text>
                         </Button>
                     </Box>
 
-                    <Box>
-                        <Button>Sign In with Xero</Button>
-                        <Button>Sign in with Intuit</Button>
+                    <Box
+                        //  border={'1px solid red'}
+                        w={'80%'} display={'flex'} justifyContent={'space-around'} gap={2} m={'auto'} >
+                        <Button mt={2} >Sign In with Xero</Button>
+                        <Button mt={2} >Sign in with Intuit</Button>
                     </Box>
 
 
-                    <Box>
+                    <Box mt={5}>
                         <Text>Need help? <Link>Visit our Help Center</Link></Text>
                     </Box>
 
@@ -94,7 +144,7 @@ export default function Login() {
 
 
                 <Box mr={10} w={720} boxSize='1000px'
-                    //  border={'1px solid red'}
+                    // border={'1px solid red'}
                     mt={150} h={'auto'}>
                     <Image h={530} src='https://d3bnlkto289wdc.cloudfront.net/assets/packs/media/illustrations/illo-2-person-scene-01ac18a3.svg' alt='Dan Abramov' />
                 </Box>
