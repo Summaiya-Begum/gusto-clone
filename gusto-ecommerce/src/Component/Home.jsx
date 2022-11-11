@@ -1,7 +1,7 @@
 import React from 'react'
 import image from "../image/home_bg.webp"
 import Style from "./Css/Home.module.css"
-import { Button, Stack, Text, Box, Divider, SimpleGrid, Img, Image, VStack, StackDivider, Container } from '@chakra-ui/react'
+import { Button, Stack, Text, Box, Divider, SimpleGrid, Img, Image, VStack,  Container } from '@chakra-ui/react'
 import Navbar from './Navbar';
 import Footer from './Footer';
 export default function Home() {

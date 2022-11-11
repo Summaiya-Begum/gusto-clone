@@ -19,32 +19,32 @@ import {
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function Login() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [logData, setLogData] = useState([])
-
+    const navigate = useNavigate()
     useEffect(() => {
         axios.get(`https://summaiya-api.herokuapp.com/user`)
             .then((res) => setLogData(res.data))
     }, [])
-    // console.log(logData)
+    console.log(logData)
 
 
 
     const handleSubmit = (email, password) => {
-        let flag = false;
-        for (let i = 0; i < logData.length; i++) {
-            if (logData[i].email === email && logData[i].password === password) {
-                flag = true;
-                alert("LogIn Successfull");
-            }
-        }
-        if (flag === false) {
-            alert("Wrong Credential");
-        }
+       const x = logData.find((e)=>{
+        return e.email == email && e.password == password
+       })
+    if(x){
+        alert("LogIn Successfull");
+            navigate('/')
+    }else{
+        alert("Wrong Credential")
+    }
     }
 
 

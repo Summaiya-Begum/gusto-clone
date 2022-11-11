@@ -2,7 +2,7 @@ import { Box, Heading, Text, Stack, Button, Input, HStack, Radio, VStack, Contai
 import Style from './Css/Signup.module.css'
 import { FcGoogle } from "react-icons/fc"
 import { useState } from 'react';
-import Axios from "axios";
+import axios from "axios";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -22,7 +22,7 @@ const CreateAccount = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        Axios.post("https://summaiya-api.herokuapp.com/user", formData);
+        axios.post("https://summaiya-api.herokuapp.com/user", formData);
         e.target.reset()
         navigate('/signin')
     }
